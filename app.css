@@ -79,6 +79,7 @@ body {
   grid-gap: 16px;
   width: 100%;
 }
+
 #eth {
   grid-area: eth;
 }
@@ -113,12 +114,14 @@ body {
   text-align: center;
   padding: 64px;
 }
-.navbar .bar {
+.navbar .bar1,
+.bar2,
+.bar3 {
   height: 4px;
   width: 36px;
   background-color: black;
   margin: 3px;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 @media only screen and (max-width: 1100px) {
   .project-grid {
@@ -170,5 +173,75 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+  }
+  .mobilenav {
+    width: 80px;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 69px;
+    right: -160px;
+    z-index: 2;
+    padding: 0 5px;
+    transition: transform 0.2s;
+  }
+  .mobilenav img {
+    width: 24px;
+    height: 24px;
+  }
+  .opendrawer {
+    transform: translateX(-160px);
+  }
+  .mobilenav a {
+    text-decoration: none;
+    color: black;
+    margin: 12px;
+  }
+  .mobilenav a:hover {
+    text-decoration: underline;
+  }
+}
+.animatebar1 {
+  animation: flipbar1 0.3s;
+  animation-fill-mode: forwards;
+}
+.animatebar2 {
+  animation: fadebar2 0.3s;
+  animation-fill-mode: forwards;
+}
+.animatebar3 {
+  animation: flipbar3 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipbar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+@keyframes fadebar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes flipbar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -10px);
   }
 }
